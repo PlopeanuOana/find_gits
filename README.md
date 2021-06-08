@@ -17,5 +17,5 @@ Tutorial:
 
 
  Further enhancements : 
-    Open a new page for gists contents and display it with a design 
-    Add a page pagination for design.
+ 1. Open a new page for gists contents and display it with a design 
+ 2. Add a page pagination for design.
