@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import './style.css'
 
 const { Octokit } = require("@octokit/core");
-const octokit = new Octokit({ auth: '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' });
+const octokit = new Octokit({ auth: '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' });
 
 function Home() {
     let [usernameSearch, setUsernameSearch] = useState('');
@@ -15,54 +15,62 @@ function Home() {
     async function fetchUserGists(e) {
         e.preventDefault();
 
-        const response = await octokit.request('GET /users/{username}/gists', {
-            username: usernameSearch
-        })
-        let gists = response.data;
-
-        if (gistsForUsers !== []) setGistsForUser([]);
-        if (forkInfo !== []) setForkInfo([]);
-
-        if (gists.length > 0) {
-            let timerInterval;
-            Swal.fire({
-                title: "Loading",
-                html: '<b></b>',
-                timer: 1000,
-                didOpen: async () => {
-                    Swal.showLoading();
-                    timerInterval = setInterval(() => {
-                        const content = Swal.getHtmlContainer()
-                        if (content) {
-                            const b = content.querySelector('b')
-                            if (b) {
-                                b.textContent = 'Waiting for gists to appear';
-                            }
-                        }
-                    })
-                    Swal.stopTimer()
-
-                    await fetchForks(gists);
-                    setGistsForUser(gists);
-
-
-                    Swal.resumeTimer()
-                },
-                willClose: () => {
-                    clearInterval(timerInterval);
-                },
-                allowOutsideClick: false,
-                allowEscapeKey: false,
-                allowEnterKey: false
-            })
-        } else {
+        if (usernameSearch === '') {
             Swal.fire(
-                'Information',
-                'There are no gists for this username',
-                'info'
+                'Error',
+                'Plese insert an username',
+                'error'
             )
-        }
+        } else {
+            const response = await octokit.request('GET /users/{username}/gists', {
+                username: usernameSearch
+            })
+            let gists = response.data;
 
+            if (gistsForUsers !== []) setGistsForUser([]);
+            if (forkInfo !== []) setForkInfo([]);
+
+            if (gists.length > 0) {
+                let timerInterval;
+                Swal.fire({
+                    title: "Loading",
+                    html: '<b></b>',
+                    timer: 1000,
+                    didOpen: async () => {
+                        Swal.showLoading();
+                        timerInterval = setInterval(() => {
+                            const content = Swal.getHtmlContainer()
+                            if (content) {
+                                const b = content.querySelector('b')
+                                if (b) {
+                                    b.textContent = 'Waiting for gists to appear';
+                                }
+                            }
+                        })
+                        Swal.stopTimer()
+
+                        await fetchForks(gists);
+                        setGistsForUser(gists);
+
+
+                        Swal.resumeTimer()
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval);
+                    },
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false
+                })
+            } else {
+                Swal.fire(
+                    'Information',
+                    'There are no gists for this username',
+                    'info'
+                )
+            }
+
+        }
     }
 
     function seeMoreAboutGist(e, url) {

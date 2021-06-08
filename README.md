@@ -12,6 +12,14 @@ Tutorial:
 3. Next install al the dependencies
  -> npm install
 
+4. Generate a new token for authentication
+ -> go to https://github.com/settings/tokens/new?scopes=repo
+ -> select all the scopes and give it to octokit const at line 7.
+
+ !!!!If you don't do this, the search will generate an error:
+    ->message: bad reguest
+    ->status: 401
+
 4. Next to start the application you run:
  ->npm start
 
