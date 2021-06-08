@@ -1,0 +1,124 @@
+.page-img {
+    padding: 250px 0 150px;
+    background: url('https://miro.medium.com/max/1400/0*sMlYM-RbzRPs2HU3.png') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0 0;
+    position: relative;
+}
+.page-title .container{
+	position: relative;
+	z-index: 2;
+}
+.page-title::before{
+	background: #010101;
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	opacity: 0.8;	
+}
+.page-title h1{
+	font-size: 38px;
+	color: #ffffff;
+	font-family: 'Arbutus Slab', serif;
+	padding: 0px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/**/
+.principal-box{
+	padding: 70px 0px;
+}
+
+.form-search{
+	display: flex;
+	flex-wrap: wrap;
+	width: 85%;
+	margin: 0 auto;
+}
+
+input[type="search"] {
+	border: none;
+	border-radius: 5px 5px 5px 5px;
+	  background: #E9E9E9;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+	  padding: 0.35em 0.75em;
+	  border: none;
+	  font-size: 1.1em;
+	  text-decoration: none;
+	  line-height: normal;
+	  max-height: 3em;
+	
+	flex: 2 0 250px;
+  }
+
+  input[type="search"]:focus {
+	background: Thistle;
+	color: white;
+	letter-spacing: .1em;
+	transition: background 400ms ease-in-out;
+	outline: none;
+  }
+
+  button {
+	flex: 1 0 90px;
+	
+	max-height: 3em;
+	font-size: 1.1em;
+	letter-spacing: .2em;
+	border-radius: 0px 5px 5px 0px;
+	background: silver;
+	color: white;
+	border: none;
+	padding: 0.35em 0.75em;
+	cursor: pointer;
+  }
+
+  button:hover {
+	background: skyblue;
+  }
+
+
+.gallery-single{
+	bottom:0;
+	margin: 30px 0px;
+    width: 75%;
+    height: 300px;
+    max-height: 500px;
+
+    -webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.why-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: rgba(177, 188, 189, 0.9);
+    padding: 12px 12px;
+    cursor: pointer;
+
+}
+.why-text p{
+	color: #ffffff;
+	font-size: 18px;
+	border-bottom: 1px dashed #010101;
+	margin: 0px;
+	padding-bottom: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.img-fluid {
+    position: relative;
+  overflow: hidden;
+}
