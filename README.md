@@ -1,7 +1,7 @@
 # oneDay
 
 Recommandation:
- NodeJS version: v14.16.0.
+ NodeJS version - v14.16.0.
 
 Tutorial:
 1. For start you have to clone the repository on your computer
