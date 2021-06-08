@@ -14,3 +14,8 @@ Tutorial:
 
 4. Next to start the application you run:
  ->npm start
+
+
+ Further enhancements : 
+    Open a new page for gists contents and display it with a design 
+    Add a page pagination for design.
