@@ -19,3 +19,7 @@ Tutorial:
  Further enhancements : 
  1. Open a new page for gists contents and display it with a design 
  2. Add a page pagination for design.
+
+ Further optimizations :
+ 1. Validate input for search
+
